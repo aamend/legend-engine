@@ -37,14 +37,6 @@ jobs:
     if: github.repository == 'finos/legend-engine'
     runs-on: ubuntu-latest
     steps:
-      - name: Configure databricks CLI
-        run: |
-          python -m pip install databricks-cli
-          databricks configure --token <<EOF
-          ${DATABRICKS_WORKSPACE}
-          ${DATABRICKS_API_TOKEN}
-          EOF
-        shell: bash
       - name: Checkout repo
         uses: actions/checkout@v2
       - name: Set up JDK
